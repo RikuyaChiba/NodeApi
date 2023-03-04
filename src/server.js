@@ -2,6 +2,7 @@
 
 const express = require('express');
 const wiki = require('./wiki.js');
+const cors = require('cors');
 
 const PORT = '8080';
 const HOST = '0.0.0.0';
@@ -21,3 +22,8 @@ app.get('/index', (req, res) => {
 app.listen(PORT, HOST, () => {
   console.log(`Running on http://${HOST}:${PORT}`);
 });
+
+// cors制限解除
+app.use(cors({
+  origin: '*'
+}));

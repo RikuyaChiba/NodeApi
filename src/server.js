@@ -1,7 +1,7 @@
 'use strict';
 
 const express = require('express');
-const wiki = require('./wiki.js');
+const user = require('./routes/user');
 const cors = require('cors');
 
 const PORT = '8080';
@@ -9,7 +9,7 @@ const HOST = '0.0.0.0';
 
 const app = express();
 
-app.use('/wiki', wiki);
+app.use('/user', user);
 
 app.get('/', (req, res) => {
   res.send('Hello, express!');
